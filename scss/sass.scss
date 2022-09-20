@@ -1,0 +1,95 @@
+@import './normalize', './variables','./mixins';
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+.container{
+    width: 100%;
+    max-width: 1310px;
+    padding: 0 24px;
+    margin: 0 auto;
+}
+/* HEADER - START */
+%center{
+  @include flex(center, space-between)
+}
+.header{
+    height: 100vh;
+    background: {
+        image: url(/images/background.png);
+        size: cover;
+        repeat: no-repeat;
+        position: center
+    }
+    @media screen and (max-width: 1025px) {
+        background: {
+            image: url(/images/planshet_bg.svg);
+    }
+    @media screen and (max-width: 768px) {
+        background-image: url(/images/backgroun_mobile.png);
+    }
+
+
+    &__row{
+        @include flex(center, space-between);
+        padding-top: 40px
+        
+    }
+    &__left{
+     @include flex(center, unset);
+     gap: 24px;
+       }
+       &__navbar{
+        @media screen and (max-width: 1025px) { 
+            display: none 
+        }
+       }
+    &__mobile{
+        @media screen and (min-width: 1025px) { 
+            display: none
+        }
+        }
+       &__link{
+        color: $header__link_color;
+        padding: 16px;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 130%;
+        @extend %transition;
+       
+        &:hover{
+            color: $color__red;
+        }
+        &:not(:last-child){
+            margin-right: 24px;
+        }
+    }
+        @media screen and (max-width: 1065px) {
+            &:not(:last-child){
+                margin-right: 12px;
+            
+           }
+       &__btns{
+        @media screen and (max-width: 1025px) { 
+            display: none 
+        }
+       }
+       &__btn{
+        @extend %transition;
+        path{
+            @extend %transition;
+        }
+        &:hover{
+            path{
+                fill: $color__red;
+            }   
+        }
+       }
+    }
+}
+}
+.about__content {
+    @include flex(center, center)
+}
+
+
+/* HEADER - END */
+/*  MAIN - START */
+/*  MAIN - END */
